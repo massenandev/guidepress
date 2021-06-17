@@ -14,4 +14,9 @@ const Category = connection.define('categories', {
   }
 })
 
+//sempre que criar um relacionamento, atualiza o BD - abre os models e 
+//sincroniza o model com a tabela (com o método sync) e depois exclui a linha de código
+//pra não ficar recriando a tabela toda hora
+Category.sync({ force: false })
+
 module.exports = Category

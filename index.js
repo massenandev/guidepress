@@ -4,6 +4,10 @@ const connection = require('./database/database')
 
 const categoriesController = require('./categories/CategoriesController')
 const articlesController = require('./articles/ArticlesController')
+
+const Article = require('./articles/Article')
+const Category = require('./categories/Category')
+
 //permite com que envie os dados do form e o express traduz numa estrutura q consiga usar no back
 //decodifica os dados enviados pelo form, em outras palavras
 app.use(express.urlencoded({ extended: true }))
