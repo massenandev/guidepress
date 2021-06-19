@@ -20,10 +20,13 @@ router.post('/categories/save', (req, res) => {
     }).then(() => {
       res.redirect('/')
     })
-  } else {
+  } else{
     res.redirect('/admin/categories/new')
   }
 })
 
+router.get('/admin/categories', (req, res) => {
+  res.render('admin/categories/index')
+})
 //precisa exportar o router pra linkar o router com o arquivo principal (index)
 module.exports = router
