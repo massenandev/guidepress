@@ -14,10 +14,14 @@
       </tr>
     </thead>
     <tbody>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <% categories.forEach(category => { %>
+        <tr>
+          <th><%= category.id %> </th>
+          <th><%= category.title %> </th>
+          <th><%= category.slug %> </th>
+          <th></th>
+        <% }) %>
+      </tr>
     </tbody>
   </table>
 </div>
