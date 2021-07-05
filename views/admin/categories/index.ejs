@@ -3,6 +3,7 @@
 <div class="container">
   <hr>
   <h2 style="text-align: center;">Categories</h2>
+  <a class="btn btn-success" href="/admin/categories/new">New category</a>
   <hr>
   <table class="table table-bordered">
     <thead>
@@ -19,7 +20,16 @@
           <th><%= category.id %> </th>
           <th><%= category.title %> </th>
           <th><%= category.slug %> </th>
-          <th></th>
+          <th>
+            <form actimon="POST" action="/categories/delete" style="display: inline;">
+              <input type="hidden" name="id" value="<%= category.id %>">
+              <button class="btn btn-danger">Delete</button>
+            </form>
+            <form method="POST" action="/categories/update">
+              <input type="hidden">
+              <button class="btn btn-warning">Edit</button>
+            </form>
+          </th>
         <% }) %>
       </tr>
     </tbody>

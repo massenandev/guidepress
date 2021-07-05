@@ -28,8 +28,28 @@ router.post('/categories/save', (req, res) => {
 router.get('/admin/categories', (req, res) => {
   Category.findAll().then(categories => {
     res.render('admin/categories/index', { categories })
-
   })
+})
+
+router.get('/categories/delete', (req, res) => {
+  let id = req.body.id
+  if(id != undefined){
+    
+    Category.destroy({
+      where: {
+        id
+      }
+    }).then(() => {
+      res.redirect('/admin/categories')
+    })
+
+    if(!NaN(id)){
+    }else {
+      res.redirect('/admin/categories')
+    }    
+  }else {
+    res.redirect('/admin/categories')
+  }
 })
 //precisa exportar o router pra linkar o router com o arquivo principal (index)
 module.exports = router
